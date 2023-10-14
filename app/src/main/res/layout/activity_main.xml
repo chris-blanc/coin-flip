@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ming"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/main_sw_simulate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coda"
+        android:minHeight="48dp"
+        android:text="@string/switch_text"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:thumbTint="@color/timberwolf" />
+
+    <ImageView
+        android:id="@+id/main_iv_coin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/icon_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:srcCompat="@drawable/ic_thumbs_up"
+        tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/main_btn_flip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/timberwolf"
+        android:fontFamily="@font/coda"
+        android:text="@string/flip_btn_text"
+        android:textColor="@color/onyx"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_btn_reset"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_iv_coin"
+        app:layout_constraintVertical_bias="0.050000012"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/main_btn_reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/timberwolf"
+        android:text="@string/reset_btn_text"
+        android:textColor="@color/onyx"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_btn_flip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_btn_flip"
+        app:layout_constraintTop_toTopOf="@+id/main_btn_flip"
+        tools:ignore="VisualLintButtonSize" />
+
+    <TextView
+        android:id="@+id/main_tv_total_flips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coda"
+        android:text="@string/placeholder_text_total_flips"
+        android:textColor="#FFCA28"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/main_tv_total_heads"
+        app:layout_constraintEnd_toEndOf="@+id/main_tv_total_heads"
+        app:layout_constraintStart_toStartOf="@+id/main_tv_total_heads"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_reset"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/main_tv_total_heads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/coda"
+        android:text="@string/placeholder_text_total_heads"
+        android:textColor="#FFCA28"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/main_tv_total_tails"
+        app:layout_constraintEnd_toEndOf="@+id/main_tv_total_tails"
+        app:layout_constraintStart_toStartOf="@+id/main_tv_total_tails"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_total_flips" />
+
+    <TextView
+        android:id="@+id/main_tv_total_tails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coda"
+        android:text="@string/placeholder_text_total_tails"
+        android:textColor="#FFCA28"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_total_heads" />
+
+    <ProgressBar
+        android:id="@+id/main_pb_heads_percent"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ming"
+        android:max="100"
+        android:progress="25"
+        android:progressTint="@color/timberwolf"
+        app:layout_constraintBottom_toTopOf="@+id/main_tv_tails_percent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_heads_percent" />
+
+    <ProgressBar
+        android:id="@+id/main_pb_tails_percent"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="75"
+        android:progressTint="@color/onyx"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_tails_percent" />
+
+    <TextView
+        android:id="@+id/main_tv_heads_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coda"
+        android:text="@string/placeholder_text_heads_percent"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/main_pb_heads_percent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_tv_total_tails"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/main_tv_tails_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coda"
+        android:text="@string/placeholder_text_tails_percent"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/main_pb_tails_percent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_pb_heads_percent" />
+
+    <EditText
+        android:id="@+id/main_et_sim_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/coda"
+        android:hint="@string/sim_number_hint"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/onyx"
+        android:textColorHint="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_btn_simulate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_pb_tails_percent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/main_btn_simulate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/onyx"
+        android:fontFamily="@font/coda"
+        android:text="@string/simulate_button_text"
+        android:textColor="@color/timberwolf"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_et_sim_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/main_et_sim_number"
+        app:layout_constraintTop_toTopOf="@+id/main_et_sim_number"
+        tools:ignore="VisualLintButtonSize" />
+</androidx.constraintlayout.widget.ConstraintLayout>
