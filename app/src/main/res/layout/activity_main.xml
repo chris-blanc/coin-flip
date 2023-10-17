@@ -121,7 +121,6 @@
         android:layout_height="wrap_content"
         android:background="@color/ming"
         android:max="100"
-        android:progress="25"
         android:progressTint="@color/timberwolf"
         app:layout_constraintBottom_toTopOf="@+id/main_tv_tails_percent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +133,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:max="100"
-        android:progress="75"
         android:progressTint="@color/onyx"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +178,7 @@
         android:textColor="@color/onyx"
         android:textColorHint="#000000"
         android:textSize="14sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_btn_simulate"
         app:layout_constraintHorizontal_bias="0.5"
@@ -198,10 +197,20 @@
         android:text="@string/simulate_button_text"
         android:textColor="@color/timberwolf"
         android:textSize="14sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/main_et_sim_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/main_et_sim_number"
         app:layout_constraintTop_toTopOf="@+id/main_et_sim_number"
         tools:ignore="VisualLintButtonSize" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="612dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
